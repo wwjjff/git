@@ -1,0 +1,23 @@
+server:
+  port: 8091
+spring:
+  application:
+    name: examprovider
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/clouddemo?serverTimeZone=GMT%2B8
+    username: root
+    password:
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: provider.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka
+  instance:
+    prefer-ip-address: true
